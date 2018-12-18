@@ -49,6 +49,23 @@ $extensionProperties = $params['sGroup']->getServiceGroupProperties();
             <img src="<?php echo \GocContextPath::getPath()?>img/contact_card.png" height="25px" style="float: right; padding-right: 1em; padding-top: 0.5em; padding-bottom: 0.5em;" />
             <table style="clear: both; width: 100%;">
                 <tr class="site_table_row_1">
+                    <td class="site_table">Notify</td><td class="site_table">
+                    <?php
+                        switch($params['sGroup']->getNotify()) {
+                            case true:
+                                ?>
+                                <img src="<?php echo \GocContextPath::getPath()?>img/tick.png" height="22px" style="vertical-align: middle;" />
+                                <?php
+                                break;
+                            case false:
+                                ?>
+                                <img src="<?php echo \GocContextPath::getPath()?>img/cross.png" height="22px" style="vertical-align: middle;" />
+                                <?php
+                                break;
+                        }
+                        ?></td>
+                </tr>
+                <tr class="site_table_row_1">
                     <td class="site_table">Monitored</td><td class="site_table">
                     <?php
                         switch($params['sGroup']->getMonitored()) {

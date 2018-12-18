@@ -41,6 +41,9 @@ class ServiceGroup extends OwnedEntity implements IScopedEntity {
     /** @Column(type="boolean") */
     protected $monitored;
 
+    /** @Column(type="boolean", options={"default": false}) */
+    protected $notify = false;
+
     /** @Column(type="string") */
     protected $email;
 
@@ -116,6 +119,10 @@ class ServiceGroup extends OwnedEntity implements IScopedEntity {
         return $this->monitored;
     }
 
+    public function getNotify() {
+        return $this->notify;
+    }
+
     public function getEmail() {
         return $this->email;
     }
@@ -171,6 +178,10 @@ class ServiceGroup extends OwnedEntity implements IScopedEntity {
 
     public function setMonitored($monitored) {
         $this->monitored = $monitored;
+    }
+
+    public function setNotify($notify) {
+        $this->notify = $notify;
     }
 
     public function setEmail($email) {

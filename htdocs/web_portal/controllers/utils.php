@@ -350,6 +350,17 @@ function getSGroupDataFromWeb() {
 
     $sg ['MONITORED'] = $monitored;
 
+    /*
+     * $_REQUEST['monitored'] is set 
+     */
+    if (isset($_REQUEST ['notify'])){
+        $notify = 'Y';
+    }else{
+        $notify = 'N';
+    }
+
+    $sg ['NOTIFY'] = $notify;
+
     if (isset($_REQUEST ['objectId'])){
         $sg ['ID'] = $_REQUEST ['objectId'];
     }
