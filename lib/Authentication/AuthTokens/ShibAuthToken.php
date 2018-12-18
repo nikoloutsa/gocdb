@@ -87,10 +87,13 @@ class ShibAuthToken implements IAuthentication {
         // specify location of the Shib Logout handler
         \Factory::$properties['LOGOUTURL'] = 'https://'.$hostname.'/Shibboleth.sso/Logout';
         $idp = isset($_SERVER['Shib-Identity-Provider']) ? $_SERVER['Shib-Identity-Provider'] : '';
-        if ($idp == 'https://unity.eudat-aai.fz-juelich.de:8443/saml-idp/metadata'
-                &&  $_SERVER['distinguishedName'] != null){
-            $this->principal = $_SERVER['distinguishedName'];
-            $this->userDetails = array('AuthenticationRealm' => array('EUDAT_SSO_IDP'));
+        if ($idp == 'https://b2access.eudat.eu:8443/saml-idp/metadata') {
+	    if( empty($_SERVER['eduPersonUniqueId'])){// || empty($_SERVER['displayName']) ){
+                die('Did not recieve required attributes from Identity Provider to complete authentication, please contact gocdb-admins');
+            } 
+            $this->principal = $_SERVER['eduPersonUniqueId'];
+	    //$this->userDetails = array('AuthenticationRealm' => array('EUDAT IdP (devel)'));
+	    $this->userDetails = array('AuthenticationRealm' => array('EUDAT_SSO_IDP'));
             return;
         } else if($idp == 'https://idp.ebi.ac.uk/idp/shibboleth'
                 &&  $_SERVER['eppn'] != null){
