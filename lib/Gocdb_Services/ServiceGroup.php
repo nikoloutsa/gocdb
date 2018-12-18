@@ -216,6 +216,7 @@ class ServiceGroup extends AbstractEntityService{
      *  Array
      *  (
      *      [MONITORED] => Y
+     *      [NOTIFY] => Y
      *      [NAME] => NGI_AEGIS_SERVICES
      *      [DESCRIPTION] => NGI_AEGIS Core Services
      *      [EMAIL] => grid-admin@ipb.ac.rs
@@ -287,6 +288,13 @@ class ServiceGroup extends AbstractEntityService{
                 $monitored = false;
             }
             $sg->setMonitored($monitored);
+
+            if ($newValues['NOTIFY'] == "Y") {
+                $notify = true;
+            } else {
+                $notify = false;
+            }
+            $sg->setNotify($notify);
 
             $sg->setName($newValues['SERVICEGROUP']['NAME']);
             $sg->setDescription($newValues['SERVICEGROUP']['DESCRIPTION']);
@@ -404,6 +412,7 @@ class ServiceGroup extends AbstractEntityService{
      *     [SERVICEGROUP] => Array
      *     (
      *         [MONITORED] => Y
+     *         [NOTIFY] => Y
      *         [NAME] => TEST
      *         [DESCRIPTION] => This is a test
      *         [EMAIL] => JCasson@hithere.com
@@ -458,6 +467,13 @@ class ServiceGroup extends AbstractEntityService{
                 $sg->setMonitored(true);
             } else {
                 $sg->setMonitored(false);
+            }
+
+            // Set notify
+            if ($values['NOTIFY'] == "Y") {
+                $sg->setNotify(true);
+            } else {
+                $sg->setNotify(false);
             }
 
             // Set the scopes

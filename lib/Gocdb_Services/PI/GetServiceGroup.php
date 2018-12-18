@@ -298,6 +298,8 @@ class GetServiceGroup implements IPIQuery, IPIQueryPageable, IPIQueryRenderable 
             $xmlSg->addChild('DESCRIPTION', htmlspecialchars($sg->getDescription()));
             $mon = ($sg->getMonitored()) ? 'Y' : 'N';
             $xmlSg->addChild('MONITORED', $mon);
+            $notify = ($sg->getNotify()) ? 'Y' : 'N';
+            $xmlSg->addChild('NOTIFY', $notify);
             $xmlSg->addChild('CONTACT_EMAIL', $sg->getEmail());
             $url = $this->baseUrl.'/index.php?Page_Type=Service_Group&id=' . $sg->getId();
             $url = htmlspecialchars($url);
