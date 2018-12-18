@@ -152,13 +152,14 @@ class SimpleSamlPhpAuthToken implements IAuthentication {
                 }
             }
             // EUDAT IdP
-            else if($idp == 'https://unity.eudat-aai.fz-juelich.de:8443/saml-idp/metadata'){
+            else if($idp == 'https://b2access.eudat.eu:8443/saml-idp/metadata'){
                 // For EUDAT federated id:
                 //$dnAttribute = $attributes['urn:oid:2.5.4.49'][0];
                 //$dnAttribute = $attributes['unity:identity:persistent'][0];
                 //print_r($attributes);
                 $nameID = $auth->getAuthData('saml:sp:NameID');
                 $this->principal = $nameID['Value'];
+                //$this->principal = $_SERVER['eduPersonUniqueId'];
                 $this->userDetails = array('AuthenticationRealm' => array('EUDAT_SSO_IDP'));
                 // iterate the attributes and store in the userDetails
                 // Each attribute name can be used as an index into $attributes to obtain the value.

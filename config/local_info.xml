@@ -15,9 +15,9 @@
           in your apache httpd config (see sample 'gocdbssl.conf' file).
         - Do not terminate these values with a '/' char.
         -->
-        <web_portal_url>https://localhost/portal</web_portal_url>
-        <pi_url>https://localhost/gocdbpi</pi_url>
-        <server_base_url>https://localhost</server_base_url>
+        <web_portal_url>https://goc-sdc.argo.grnet.gr/portal</web_portal_url>
+        <pi_url>https://goc-sdc.argo.grnet.gr/gocdbpi</pi_url>
+        <server_base_url>https://goc-sdc.argo.grnet.gr</server_base_url>
         <write_api_user_docs_url>https://wiki.egi.eu/wiki/GOCDB/Write_API/Technical_Documentation</write_api_user_docs_url>
 
         <optional_features>
@@ -38,13 +38,13 @@
         'get_site' would return all sites in all scopes.
         -->
         <default_scope>
-            <name>EGI</name>
+            <name>SDC</name>
         </default_scope>
 
         <!-- Behaviour related to google API tools -->
         <google>
             <!-- Show google map on start page -->
-            <show_map_on_start_page>true</show_map_on_start_page>
+            <show_map_on_start_page>false</show_map_on_start_page>
         </google>
 
         <!-- default_scope_match
@@ -61,7 +61,7 @@
         Optional scopes are NOT in the reserved_scopes list.
         (Should be positive integer or zero). -->
         <minimum_scopes>
-            <ngi>1</ngi>
+            <ngi>0</ngi>
             <site>1</site>
             <service>1</service>
             <service_group>1</service_group>
@@ -105,7 +105,7 @@
         Emails are sent by the server when managing/requesting roles, retrieving user
         accounts (e.g. associating a user account with a new cert DN).
         -->
-        <send_email>false</send_email>
+        <send_email>true</send_email>
 
 
         </local_info>

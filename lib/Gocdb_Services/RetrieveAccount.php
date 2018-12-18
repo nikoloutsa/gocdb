@@ -173,7 +173,8 @@ class RetrieveAccount extends AbstractEntityService {
             "\n\nIf you did not create this request in GOCDB, please immediately contact gocdb-admins@mailman.egi.eu" ;
             ;
         //If "sendmail_from" is set in php.ini, use second line ($headers = '';):
-        $headers = "From: no-reply@goc.egi.eu";
+        //$headers = "From: no-reply@goc.egi.eu";
+        $headers = "From: no-reply@grnet.gr";
         //$headers = "";
 
         //mail command returns boolean. False if message not accepted for delivery.
