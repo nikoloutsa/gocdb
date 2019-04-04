@@ -94,6 +94,26 @@
 		   <dn>/C=UK/O=eScience/OU=CLRC/L=RAL/CN=james mccarthy</dn>
 		   <access_level>4</access_level>
 	</user>
+
+	<user>
+			<dn>/C=GR/L=Athens/O=Greek Research and Technology Network/CN=alerta.argo.grnet.gr</dn>
+			<access_level>3</access_level>
+	</user>
+
+	<user>
+		<dn>/C=GR/O=HellasGrid/OU=grnet.gr/CN=Nikolaos Nikoloutsakos</dn>
+		<access_level>4</access_level>
+	</user>
+<!--
+	<user>
+		<dn>/C=GR/O=HellasGrid/OU=grnet.gr/CN=Nikolaos Nikoloutsakos</dn>
+		<access_level>4</access_level>
+	</user>
+-->
+	<user>
+		<dn>/C=GR/L=Athens/O=Greek Research and Technology Network/CN=mon-test.argo.grnet.gr</dn>
+		<access_level>4</access_level>
+	</user>
 	
 </authorised_users>
 

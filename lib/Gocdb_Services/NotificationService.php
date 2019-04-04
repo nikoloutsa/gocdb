@@ -106,7 +106,8 @@ class NotificationService extends AbstractEntityService {
             $webPortalURL = $localInfoXML->local_info->web_portal_url;
 
             // Email content
-            $headers = "From: no-reply@goc.egi.eu";
+            //$headers = "From: no-reply@goc.egi.eu";
+            $headers = "From: no-reply@grnet.gr";
             $subject = "GocDB: A Role request requires attention";
 
             $body = "Dear GOCDB User,\n\n" . "A user has requested a role that requires attention.\n\n" .
