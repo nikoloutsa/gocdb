@@ -87,7 +87,8 @@ class Role {
      *   role requests and 'STATUS_GRANTED' for granted roles.
      */
     public function __construct(\RoleType $roleType, \User $user, \OwnedEntity $ownedEntity, $status) {
-        $this->roleType = $roleType;
+	$this->id = 'DEFAULT';
+	$this->roleType = $roleType;
         $this->setStatus($status);
         //$this->setName($name);
         $ownedEntity->addRoleDoJoin($this);

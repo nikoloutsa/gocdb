@@ -65,12 +65,29 @@ $extensionProperties = $params['sGroup']->getServiceGroupProperties();
                         }
                         ?></td>
                 </tr>
+                <tr class="site_table_row_2">
+                    <td class="site_table">Notify</td><td class="site_table">
+                    <?php
+                        switch($params['sGroup']->getNotify()) {
+                            case true:
+                                ?>
+                                <img src="<?php echo \GocContextPath::getPath()?>img/tick.png" height="22px" style="vertical-align: middle;" />
+                                <?php
+                                break;
+                            case false:
+                                ?>
+                                <img src="<?php echo \GocContextPath::getPath()?>img/cross.png" height="22px" style="vertical-align: middle;" />
+                                <?php
+                                break;
+                        }
+                        ?></td>
+                </tr>
                 <?php
                 if($params['sGroup']->getScopes() != null && $params['sGroup']->getScopes()->first() != null &&
                         $params['sGroup']->getScopes()->first()->getName() == "Local") {
                     $style = " style=\"background-color: #A3D7A3;\""; } else { $style = ""; }
                 ?>
-                <tr class="site_table_row_2" <?php echo $style ?>>
+                <tr class="site_table_row_1" <?php echo $style ?>>
                     <td class="site_table">
                         <a href="index.php?Page_Type=Scope_Help" style="word-wrap: normal">Scope Tags</a>
                     </td>
@@ -78,7 +95,7 @@ $extensionProperties = $params['sGroup']->getServiceGroupProperties();
             <textarea readonly="true" style="width: 100%; height: 60px;"><?php xecho($params['sGroup']->getScopeNamesAsString())?></textarea>
                     </td>
                 </tr>
-                <tr class="site_table_row_1">
+                <tr class="site_table_row_2">
                     <td class="site_table">Contact E-Mail</td>
                     <td class="site_table">
                         <?php if($params['authenticated']) { ?>

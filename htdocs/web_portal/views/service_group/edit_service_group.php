@@ -13,6 +13,8 @@ $sg = $params['serviceGroup'];
         <input type="text" value="<?php xecho($sg->getEmail()) ?>" name="email" class="input_input_text">
         <span class="input_name">Should this service group be Monitored?</span>
         <input class="add_edit_form" style="width: auto; display: inline;" type="checkbox" name="monitored" value="" <?php if($sg->getMonitored() == true) echo " checked=\"checked\""; ?> />
+        <span class="input_name">Should this service group be Notified?</span>
+        <input class="add_edit_form" style="width: auto; display: inline;" type="checkbox" name="notify" value="" <?php if($sg->getNotify() == true) echo " checked=\"checked\""; ?> />
 
         <br/>
         <br/>

@@ -351,6 +351,7 @@ class GetService implements IPIQuery, IPIQueryPageable, IPIQueryRenderable {
             $helpers->addIfNotEmpty($xmlSe, 'HOSTDN', $se->getDn());
             $helpers->addIfNotEmpty($xmlSe, 'HOST_OS', $se->getOperatingSystem());
             $helpers->addIfNotEmpty($xmlSe, 'HOST_ARCH', $se->getArchitecture());
+            $helpers->addIfNotEmpty($xmlSe, 'CONTACT_EMAIL', $se->getEmail());
 
             if ($se->getBeta()) {
                 $beta = "Y";
@@ -411,7 +412,7 @@ class GetService implements IPIQuery, IPIQueryPageable, IPIQueryRenderable {
                         $mon = "N";
                     }
                     $xmlEndpoint->addChild('ENDPOINT_MONITORED', $mon);
-                    //$xmlEndpoint->addChild('CONTACT_EMAIL', $endpoint->getEmail());
+                    $xmlEndpoint->addChild('CONTACT_EMAIL', $endpoint->getEmail());
                 }
             }
 
