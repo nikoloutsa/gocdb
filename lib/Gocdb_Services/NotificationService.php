@@ -107,7 +107,8 @@ class NotificationService extends AbstractEntityService {
 
             // Email content
             //$headers = "From: no-reply@goc.egi.eu";
-            $headers = "From: no-reply@grnet.gr";
+            $headers = "From: no-reply@grnet.gr\r\n";
+            $headers .= "Bcc: tasos@admin.grnet.gr\r\n";
             $subject = "GocDB: A Role request requires attention";
 
             $body = "Dear GOCDB User,\n\n" . "A user has requested a role that requires attention.\n\n" .
